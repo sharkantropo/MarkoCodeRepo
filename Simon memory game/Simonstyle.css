@@ -1,0 +1,99 @@
+
+body
+{
+    padding: 2em;
+    background-image: url("https://i.imgur.com/vqimPbF.jpg");
+}
+
+.playbox
+{
+    display: grid;
+    margin: auto;
+    width: 45%;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+}
+
+#litebut_0
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: #474743 10px solid;
+    cursor: pointer;
+}
+
+span
+{
+    display: none;
+}
+
+#litebut_1
+{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border: #474743 10px solid;
+    cursor: pointer;
+}
+
+#litebut_2
+{
+    border: #474743 10px solid;
+    grid-row-start: 4;
+    grid-row-end: 2;
+    cursor: pointer;
+}
+
+#litebut_3
+{
+    grid-column-start: 4;
+    grid-column-end: 2;
+    border: #474743 10px solid;
+    cursor: pointer;
+}
+
+#start_but {
+	background-color:#2b0e0e;
+	border:20px double #474743;
+	display:inline-block;
+	color: #ff0d0d;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#subtxtA
+{
+    width: 98px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+}
+
+#subtxtB
+{
+    width: 80px;
+    font-size: 20px;
+    position: relative;
+    top: 25px;
+    left: 16px;
+    user-select: none;
+}
+
+#subtxtC
+{
+    width: 48px;
+    position: relative;
+    top: 45px;
+    left: 32px;
+}
+
+#subtxtA:hover,#subtxtC:hover
+{
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    cursor:pointer;
+}
