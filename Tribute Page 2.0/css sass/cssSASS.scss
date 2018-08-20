@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -45,4 +45,58 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+/*-------------------------------------------------------------------*/
+
+/* Dimensions and text format*/
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$padding: 3vw;
+$mid: center;
+
+body 
+{
+  font: 100% $font-stack;
+  color: $primary-color;
+  padding: $padding;
+}
+
+#main
+{
+	padding: ($padding)/2;
+}
+
+h1
+{
+	font-size: 160%;
+	text-align: $mid;
+}
+
+h3
+{
+	font-size: 110%;
+	text-align: $mid;	
+}
+
+p
+{
+	font-size: 90%;
+	text-align: $mid;
+}
+
+#img-div
+{
+	padding: ($padding)/2;
+}
+
+#image
+{
+	display: block;
+	margin: auto;
+	max-width: 80%;
+}
+
+#big-paragraph
+{
+	text-align: justify;
 }
