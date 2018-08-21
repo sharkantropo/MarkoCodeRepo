@@ -53,12 +53,18 @@ $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 $padding: 3vw;
 $mid: center;
+@for $i from 1 to 10 
+{
+	.col-#{$i} { width: 100%; height: 90%; border: #333 solid 1px; }
+}
+
 
 body 
 {
   font: 100% $font-stack;
   color: $primary-color;
   padding: $padding;
+  line-height: 20px;
 }
 
 #main
@@ -70,12 +76,14 @@ h1
 {
 	font-size: 160%;
 	text-align: $mid;
+	margin: 5px 5px;
 }
 
 h3
 {
 	font-size: 110%;
-	text-align: $mid;	
+	text-align: $mid;
+	margin: 5px 5px;	
 }
 
 p
@@ -99,4 +107,40 @@ p
 #big-paragraph
 {
 	text-align: justify;
+}
+
+.Ult-gallery
+{
+	display: -webkit-box;
+    display: -ms-flexbox;
+	display: flex;
+	height: 400px;
+	margin: 5px 5px;
+	overflow: auto;
+}
+
+@media(max-width: 800px)
+{
+	.Ult-gallery
+	{
+		flex-direction: column;
+		height: 800px;
+	}	
+}
+
+/* Color scheme */
+
+body
+{
+	background-color: #DF8036;
+}
+
+#main
+{
+	background-color: #E69C63;
+}
+
+#img-div
+{
+	background-color: #E9AA79;
 }
