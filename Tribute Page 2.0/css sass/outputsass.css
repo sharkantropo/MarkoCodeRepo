@@ -54,10 +54,65 @@ table {
 
 /*-------------------------------------------------------------------*/
 /* Dimensions and text format*/
+.col-1 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-2 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-3 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-4 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-5 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-6 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-7 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-8 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
+.col-9 {
+  width: 100%;
+  height: 90%;
+  border: #333 solid 1px;
+}
+
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
   padding: 3vw;
+  line-height: 20px;
 }
 
 #main {
@@ -67,11 +122,13 @@ body {
 h1 {
   font-size: 160%;
   text-align: center;
+  margin: 5px 5px;
 }
 
 h3 {
   font-size: 110%;
   text-align: center;
+  margin: 5px 5px;
 }
 
 p {
@@ -91,6 +148,34 @@ p {
 
 #big-paragraph {
   text-align: justify;
+}
+
+.Ult-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 400px;
+  margin: 5px 5px;
+  overflow: auto;
+}
+
+@media (max-width: 800px) {
+  .Ult-gallery {
+    flex-direction: column;
+    height: 800px;
+  }
+}
+/* Color scheme */
+body {
+  background-color: #DF8036;
+}
+
+#main {
+  background-color: #E69C63;
+}
+
+#img-div {
+  background-color: #E9AA79;
 }
 
 /*# sourceMappingURL=outputsass.css.map */
