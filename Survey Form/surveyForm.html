@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Survey Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="scss\output.css" />
+</head>
+
+<body>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <h1 id="title">Household Survey ⟰</h1>
+  <section id="main">
+    <p id="description"> Thank you for participating on this quick survey. Your information will help us to understand the
+      needs and average composition of a modern household!</p>
+    <form action="" method="GET" id="survey-form">
+      <div class="form-input">
+        <label id="name-label" for="name">Fullname:</label>
+        <input type="text" name="input-name" id="name" pattern="[A-Za-z\s]+" autofocus required placeholder="Input your name...">
+        <span class="validity"></span>
+      </div>
+      <div class="form-input">
+        <label id="email-label" for="email">Email:</label>
+        <input type="email" name="input-email" id="email" required placeholder="Input your email...">
+        <span class="validity"></span>
+      </div>
+      <div class="form-input">
+        <label id="number-label" for="number">Age:</label>
+        <input type="number" name="input-name" id="number" placeholder="--" min="18" max="99" requiredred>
+        <span class="validity"></span>
+      </div>
+      <div class="select-input">
+        <label for="dropdown">Type of housing:</label>
+        <select name="input-dropdown" id="dropdown">
+          <option value="">--Please select an option--</option>
+          <option value="single">Single detached unit</option>
+          <option value="semi">Semi detached dwelling</option>
+          <option value="attached">Attached single unit</option>
+          <option value="multi">Attached multi unit</option>
+          <option value="movable">Movable dwelling</option>
+        </select>
+      </div>
+      <div class="radio-input">
+        <p>Please, select your household's size:</p>
+        <div>
+          <input type="radio" name="attribute" id="option_1" value="0" checked>
+          <label for="option_1">2 or less people</label>
+          <input type="radio" name="attribute" id="option_2" value="0">
+          <label for="option_2">3 to 5 people</label>
+        </div>
+        <div>
+          <input type="radio" name="attribute" id="option_3" value="0">
+          <label for="option_3">6 to 10 people</label>
+          <input type="radio" name="attribute" id="option_4" value="0">
+          <label for="option_4" name="attribute">10 or more people</label>
+        </div>
+      </div>
+      <div class="checkbox-input">
+        <p>Pick all the home appliances your household own:</p>
+        <fieldset>
+          <legend>List of Appliances</legend>
+          <div>
+            <input type="checkbox" name="aircon" id="air_con" value="attribute">
+            <label for="air_con">A/C</label>
+            <input type="checkbox" name="stove" id="stove" value="attribute">
+            <label for="stove">Stove</label>
+            <input type="checkbox" name="toast" id="toaster" value="attribute">
+            <label for="toast">Toaster</label>
+          </div>
+          <div>
+            <input type="checkbox" name="washing" id="washing_machine" value="attribute">
+            <label for="washing_machine">Washing machine</label>
+            <input type="checkbox" name="boiler" id="water_boiler" value="attribute">
+            <label for="water_boiler">Water boiler</label>
+            <input type="checkbox" name="heater" id="water_heater" value="attribute">
+            <label for="water_heater">Water heater</label>
+          </div>
+          <div>
+            <input type="checkbox" name="cloth" id="cloth_dryer" value="attribute">
+            <label for="cloth_dryer">Clothes dryer</label>
+            <input type="checkbox" name="television" id="tv" value="attribute">
+            <label for="tv">T.V</label>
+            <input type="checkbox" name="refrigerator" id="nevera" value="attribute">
+            <label for="nevera">refrigerator</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="text-area">
+        <p>Any aditional thoughts related to your household that you don't mind to share with us?:</p>
+        <textarea name="text-area" id="textarea" cols="30" rows="10" maxlength="250" placeholder="Insert a comment..."></textarea>
+      </div>
+      <input type="submit" id="submit" value="Submit">
+    </form>
+  </section>
+
+
+</body>
+
+</html>
