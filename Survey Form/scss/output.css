@@ -54,16 +54,174 @@ table {
 
 /*____________________________________________*/
 /*Dimensions and font size*/
+h1 {
+  text-align: center;
+}
+
+#title {
+  margin: 2vw;
+  font-size: 4vw;
+}
+
+p {
+  text-align: justify;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  padding: 12vw;
+}
+
+section {
+  padding: 2vw;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+#name, #email, #dropdown {
+  width: 100%;
+  font: 100% Helvetica, sans-serif;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#number {
+  width: 80px;
+  font: 100% Helvetica, sans-serif;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+#textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  padding: 10px 15px;
+  margin: auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-input {
+  margin-top: 1.2vw;
+  margin-bottom: 1.2vw;
+}
+
 input:invalid + span:after {
   content: "✖";
   color: #f00;
   padding-left: 5px;
 }
 
-input:valid + span:after {
-  content: "✓";
-  color: #26b72b;
-  padding-left: 5px;
+.flexible-checkboxes {
+  display: flex;
+}
+
+#option_1 {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+}
+
+#option_2 {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+}
+
+#option_3 {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+}
+
+#option_4 {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+}
+
+@media (max-width: 480px) {
+  #option_1, #option_2, #option_3, #option_4 {
+    display: block;
+  }
+
+  .flexible-checkboxes {
+    flex-direction: column;
+  }
+}
+@media (min-width: 480px) {
+  .list_1 {
+    width: 25%;
+  }
+
+  .list_2 {
+    width: 25%;
+  }
+
+  .list_3 {
+    width: 25%;
+  }
+
+  .list_4 {
+    width: 25%;
+  }
+}
+#submit {
+  width: 90px;
+  font: 100% Helvetica, sans-serif;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 5px;
+  margin: auto;
+  display: block;
+}
+
+/*input:valid + span:after {
+    content: '✓';
+    color: #26b72b;
+    padding-left: 5px;
+}*/
+/*Color schemes and visual effects*/
+body, #submit {
+  background-color: #046ec8;
+}
+
+#title {
+  color: #41bce6;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
+
+#main {
+  background-color: white;
+}
+
+#submit {
+  color: #41bce6;
 }
 
 /*# sourceMappingURL=output.css.map */

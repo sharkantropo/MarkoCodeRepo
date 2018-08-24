@@ -49,16 +49,154 @@ table {
 /*____________________________________________*/
 
 /*Dimensions and font size*/
+$default-dimension: 6vw;
+$c: center;
+$j: justify;
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+@mixin form-bar($d) 
+{
+	width: $d;
+	font: 100% $font-stack;
+	padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h1
+{
+	text-align: $c;
+}
+
+#title
+{
+	margin: $default-dimension/3;
+	font-size:$default-dimension/1.5;
+}
+p
+{
+	text-align: $j;
+}
+
+body
+{
+	font: 100% $font-stack;
+  	color: $primary-color;
+	padding: 2*($default-dimension);
+}
+
+section
+{
+	padding: ($default-dimension)/3;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+}
+
+#name, #email, #dropdown
+{
+	@include form-bar(100%);
+}
+
+#number
+{
+	@include form-bar(80px);
+	margin-left: 10px;
+}
+
+#textarea
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-align: justify;
+	padding: 10px 15px;
+	margin: auto;
+	display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-input 
+{
+	margin-top: $default-dimension/5;
+	margin-bottom: $default-dimension/5;
+}
 
 
-input:invalid + span:after {
+input:invalid + span:after 
+{
     content: '✖';
     color: #f00;
     padding-left: 5px;
 }
 
-input:valid + span:after {
+.flexible-checkboxes
+{
+	display: flex;
+}
+@for $i from 1 to 5 
+{
+	#option_#{$i} { margin-left: 2%; margin-top: 2%; margin-bottom: 1.5%; }
+}
+
+@media (max-width:480px)
+{
+	#option_1,#option_2,#option_3,#option_4
+	{
+		display: block;
+	}
+	.flexible-checkboxes
+	{
+		flex-direction: column;
+	}
+}
+
+@media (min-width:480px)
+{
+	@for $i from 1 to 5 
+	{
+		.list_#{$i} { width: 25%; }
+	}
+}
+
+#submit
+{
+	@include form-bar(90px);
+	padding: 5px;
+	margin: auto;
+	display: block;
+}
+/*input:valid + span:after {
     content: '✓';
     color: #26b72b;
     padding-left: 5px;
+}*/
+
+/*Color schemes and visual effects*/
+
+body, #submit
+{
+	background-color: #046ec8;
+}
+
+#title
+{
+  color: #41bce6;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */     
+}
+#main
+{
+	background-color: white;
+}
+
+#submit
+{
+	color: #41bce6;
 }
