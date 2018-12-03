@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Provider} from 'react-redux';
-import {Container,store,quotes_array} from './App';
+import {ReduxScreenContainer,ReduxTwitterLink,ReduxButtonContainer,store,quotes_array} from './App';
 import * as serviceWorker from './serviceWorker';
 
-class App extends React.Component{ render() { return(<div> <Container the_quotes={quotes_array} /></div>)}};
+//Presentational
+
+class App extends React.Component{ render() { return(<div id="quote-box"> <ReduxScreenContainer /> <ReduxButtonContainer the_quotes={quotes_array}/> <ReduxTwitterLink /></div>)}};
 
 //Render to DOM
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));

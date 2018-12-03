@@ -5,28 +5,7 @@ import { createStore } from 'redux';
 //import logo from './logo.svg';
 //import './App.css';
 
-//Redux
-//Define a constant for change quote message action
-const CHANGE_QUOTE = 'CHANGE_QUOTE';
-// Action, CHANGE_QUOTE triggers store to pick an object from array randomly and return it.
-const quoteChanger = quote => ({ type: CHANGE_QUOTE, quote });
-
-const quoteReducer = (state = "default", action) => {
-	switch (action.type) {
-		case CHANGE_QUOTE:
-			{
-				return { author: action.quote[0],quote: action.quote[1] };
-			}
-		default:
-			{
-				return state;
-			}
-	}
-};
-
-const store = createStore(quoteReducer);
-
-//React
+// Data and functions
 const quotes_array = [{
 	'quote': 'Not all those who wander are lost.',
 	'author': '― J.R.R. Tolkien'
@@ -114,30 +93,81 @@ const setRandquote = (arr) =>
 	let chose = arr.filter((quote, index) => index === pnum);
 	return [chose[0].author,chose[0].quote];
 } 
+const dataValidation= (arr) =>
+{
+	if(typeof arr === "object")
+	{
+		for(let i=0; i< arr.length;i++)
+		{
+			if( !arr[i].hasOwnProperty('author') || !arr[i].hasOwnProperty('quote'))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	return false;
+}
 
 
-//Presentational
+//Constant for the message action
+const CHANGE_QUOTE = 'CHANGE_QUOTE';
+//The action function 
+const quoteChanger = quote => ({ type: CHANGE_QUOTE, quote });
+
+const quoteReducer = (state = [], action) => {
+	switch (action.type) {
+		case CHANGE_QUOTE:
+			{
+				return { author: action.quote[0],quote: action.quote[1] };
+			}
+		default:
+			{
+				return {author: state[0], quote: state[1]}
+			}
+	}
+};
+
+const store = createStore(quoteReducer,setRandquote(quotes_array));
+
+//React
+
+
+//Containers
 class Screen extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = { author: "test", quote: "test" };
-		this.handleQuote = this.handleQuote.bind(this);
-	}
-	handleQuote() {
-		this.props.submitNewQuote(this.props.the_quotes);
-		this.setState({ author: this.props.quotes.author , quote: this.props.quotes.quote });
-	}
 	render() {
-		return (<div>
-			<div>
-				<p id="text">{this.state.quote}</p>
-				<h2 id="author">{this.state.author}</h2>
+		return (
+			<div id="display-box">
+				<p id="text">{this.props.quotes.quote }</p>
+				<h2 id="author">{this.props.quotes.author}</h2>
 			</div>
-			<a id="tweet-quote" href="https://www.google.com/">Link</a>
-			<button id="new-quote" onClick={this.handleQuote}>New Quote</button>
-		</div>
 		);
 	}
+}
+
+const QuoteChangerButton= function (props) 
+{
+		let handleQuote= (e) =>
+		{
+			e.preventDefault();
+			if(dataValidation(props.the_quotes))
+			{
+				props.submitNewQuote(props.the_quotes);
+			}
+			else
+			{
+				alert('Not a valid data structure');
+			}
+		}
+		return (<button id="new-quote" onClick={handleQuote}>New Quote</button>);
+}
+
+const TweetButton= function (props)
+{
+	
+		return (
+			<a id="tweet-quote" href="twitter.com/intent/tweet">Link</a>
+		);
 }
 
 //React-Redux
@@ -152,6 +182,8 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-const Container = connect(mapStateToProps, mapDispatchToProps)(Screen);
+const ReduxScreenContainer = connect(mapStateToProps, null)(Screen);
+const ReduxButtonContainer = connect(null,mapDispatchToProps)(QuoteChangerButton);
+const ReduxTwitterLink=connect(mapStateToProps,null)(TweetButton);
 
-export  {Container,store,quotes_array};
+export  {ReduxScreenContainer,ReduxTwitterLink,ReduxButtonContainer,store,quotes_array};
