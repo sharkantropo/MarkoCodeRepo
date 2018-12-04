@@ -166,7 +166,7 @@ const TweetButton= function (props)
 {
 	
 		return (
-			<a id="tweet-quote" href="twitter.com/intent/tweet">Link</a>
+			<a id="tweet-quote" href="twitter.com/intent/tweet">Tweet it!</a>
 		);
 }
 
