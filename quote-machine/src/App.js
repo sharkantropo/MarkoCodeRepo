@@ -2,8 +2,7 @@ import React from 'react';
 //import {Component} from 'react';
 import { connect } from 'react-redux';
 import { createStore } from 'redux';
-//import logo from './logo.svg';
-//import './App.css';
+import './App.css';
 
 // Data and functions
 const quotes_array = [{
@@ -28,7 +27,7 @@ const quotes_array = [{
 	'quote': 'I travel not to go anywhere, but to go. I travel for travel\'s sake. The great affair is to move.',
 	'author': '― Robert Louis Stevenson'
 }, {
-	'quote': 'It is good to have an end to journey toward; but it is the journey that matters, in the end.',
+	'quote': 'It is good to have an end to journey toward. But it is the journey that matters, in the end.',
 	'author': '― Ernest Hemingway'
 }, {
 	'quote': 'The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.', 'author': '― Marcel Proust'
@@ -42,7 +41,7 @@ const quotes_array = [{
 	'quote': 'The traveler sees what he sees. The tourist sees what he has come to see.',
 	'author': '― G.K. Chesterton'
 }, {
-	'quote': 'I read; I travel; I become.',
+	'quote': 'I read, I travel, I become.',
 	'author': '― Derek Walcott'
 }, {
 	'quote': 'Every dreamer knows that it is entirely possible to be homesick for a place you\'ve never been to.',
@@ -57,7 +56,7 @@ const quotes_array = [{
 	'quote': 'there was nowhere to go but everywhere',
 	'author': '― Jack Kerouac'
 }, {
-	'quote': 'Our battered suitcases were piled on the sidewalk again; we had longer ways to go. But no matter, the road is life',
+	'quote': 'Our battered suitcases were piled on the sidewalk again, we had longer ways to go. But no matter, the road is life.',
 	'author': '― Jack Kerouac'
 }, {
 	'quote': 'If you reject the food, ignore the customs, fear the religion, and avoid the people, you might better stay home.',
@@ -137,9 +136,9 @@ const store = createStore(quoteReducer,setRandquote(quotes_array));
 class Screen extends React.Component {
 	render() {
 		return (
-			<div id="display-box">
-				<p id="text">{this.props.quotes.quote }</p>
-				<h2 id="author">{this.props.quotes.author}</h2>
+			<div id="display-box" class="well">
+				<p id="text" class="text-center">{this.props.quotes.quote}</p>
+				<h4 id="author" class="text-center">{this.props.quotes.author}</h4>
 			</div>
 		);
 	}
@@ -159,14 +158,16 @@ const QuoteChangerButton= function (props)
 				alert('Not a valid data structure');
 			}
 		}
-		return (<button id="new-quote" onClick={handleQuote}>New Quote</button>);
+		return (<button id="new-quote" class="btn btn-default btn-block" onClick={handleQuote}>New Quote</button>);
 }
 
 const TweetButton= function (props)
 {
-	
 		return (
-			<a id="tweet-quote" href="twitter.com/intent/tweet">Tweet it!</a>
+			// added rel="noopener noreferrer", not really needed for such small project.
+			// However, https://support.performancefoundry.com/article/186-noopener-noreferrer-on-my-links.
+			// Good practices never overstay their welcome.
+<a id="tweet-quote" class="btn btn-primary btn-block" href={`https://twitter.com/intent/tweet?text=${props.quotes.quote}${props.quotes.author}`} target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter text-center"></i></a>
 		);
 }
 

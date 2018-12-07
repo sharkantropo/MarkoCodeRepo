@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 //Presentational
 
-class App extends React.Component{ render() { return(<div id="quote-box"> <ReduxScreenContainer /> <ReduxButtonContainer the_quotes={quotes_array}/> <ReduxTwitterLink /></div>)}};
+class App extends React.Component{ render() { return(<div id="quote-box" class="container-fluid"> <h1 class="text-primary text-center">TravelQuoteMachine</h1> <ReduxScreenContainer /> <ReduxButtonContainer the_quotes={quotes_array}/> <ReduxTwitterLink /></div>)}};
 
 //Render to DOM
 ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'));
