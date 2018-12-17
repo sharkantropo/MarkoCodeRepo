@@ -1,12 +1,13 @@
 import React from 'react';
-// import  from 'react-redux';
 
 const OutputTextArea= function (props)
 {
-
 		return(
             <div id="pick">
-                <textarea id="preview" name="previewer" value={"la mulana"} />
+                <br />
+                    <div id="preview" dangerouslySetInnerHTML={{__html: props.preview.mark}} ></div>
+                <br />
+                    <textarea id="html_preview" name="html_previewer" readonly value={props.preview.mark} type="text"/>
             </div>
         );
 } 

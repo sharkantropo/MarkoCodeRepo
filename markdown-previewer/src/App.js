@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect} from 'react-redux';
+import InputTextArea from './editor-container/input'
+import OutputTextArea from './previewer-container/output'
+import {mapStatetoProps,mapDispatchtoProps} from './redux/react-redux'
+//import './App.css';
 
+// connected containers
+const ReduxInputContainer = connect(mapStatetoProps, mapDispatchtoProps)(InputTextArea);
+const ReduxOutputContainer = connect(mapStatetoProps,null)(OutputTextArea);
+
+//Presentational
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    <div id="main-app">
+		<h1>My Markdown Previewer</h1>
+		<ReduxInputContainer />
+		<ReduxOutputContainer />
+	</div>
     );
   }
 }
