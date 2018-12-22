@@ -1,0 +1,66 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+h1
+{
+    text-align: center;
+}
+
+#toolbar
+{
+	grid-area: select;
+}
+
+#clear-b
+{
+	grid-area: clear;
+	button
+	{
+		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+		-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+		box-shadow:inset 0px 1px 0px 0px #ffffff;
+		background-color:#ffffff;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		border-radius:6px;
+		border:1px solid #dcdcdc;
+		display:inline-block;
+		cursor:pointer;
+		padding:6px 24px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #ffffff;
+	}
+}
+
+#editor
+{
+	grid-area: edit-win;
+	overflow: auto;
+	resize: none;
+	width: 95%;
+	height: 70vh;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#output-container
+{
+	grid-area: out-win;
+	overflow: auto;
+	margin-top: 10px;
+}
+
+#app-container
+{
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-template-rows: 5vh 73vh;
+	grid-template-areas:
+	"clear select"
+	"edit-win out-win";
+}
