@@ -1,0 +1,137 @@
+/* Grid dimensions and sizes*/
+#drum-machine {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 20% 20% 20% 35%;
+  grid-template-rows: 30% 30% 30%;
+  height: 90vh;
+  width: 70vw;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  padding-left: 2.5%;
+  border-radius: 5px;
+}
+#drum-machine .drum-pad {
+  font-size: 150%;
+  padding-top: 25%;
+  border-radius: 5px;
+}
+#drum-machine .Q {
+  grid-column: 1;
+  grid-row: 1;
+}
+#drum-machine .W {
+  grid-column: 2;
+  grid-row: 1;
+}
+#drum-machine .E {
+  grid-column: 3;
+  grid-row: 1;
+}
+#drum-machine .A {
+  grid-column: 1;
+  grid-row: 2;
+}
+#drum-machine .S {
+  grid-column: 2;
+  grid-row: 2;
+}
+#drum-machine .D {
+  grid-column: 3;
+  grid-row: 2;
+}
+#drum-machine .Z {
+  grid-column: 1;
+  grid-row: 3;
+}
+#drum-machine .X {
+  grid-column: 2;
+  grid-row: 3;
+}
+#drum-machine .C {
+  grid-column: 3;
+  grid-row: 3;
+}
+#drum-machine #display {
+  color: #fff;
+  font-size: 150%;
+  padding-top: 15%;
+  font-weight: 200;
+  user-select: none;
+}
+@media (max-width: 450px) {
+  #drum-machine #display {
+    font-size: 6px;
+    padding-top: 24%;
+  }
+}
+@media (min-width: 450px) and (max-width: 800px) {
+  #drum-machine #display {
+    font-size: 12px;
+    padding-top: 18%;
+  }
+}
+#drum-machine #volume-slider {
+  color: #fff;
+  padding-top: 20%;
+}
+#drum-machine #volume-slider #slider {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+#drum-machine #volume-slider i {
+  display: block;
+  font-size: 120%;
+  color: #d3d3d3;
+}
+#drum-machine #volume-slider #slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #cf2d2d;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  #drum-machine #volume-slider #slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  }
+}
+#drum-machine #box-name {
+  padding-top: 15%;
+  color: #d3d3d3;
+}
+@media (max-width: 600px) {
+  #drum-machine #box-name h3 {
+    font-size: 80%;
+  }
+}
+
+/* Color and effects appearance*/
+#drum-machine {
+  background-color: #444;
+}
+#drum-machine .drum-pad {
+  color: #fff;
+  background-color: #5f5e5e;
+  box-shadow: 0 9px #999;
+}
+#drum-machine .drum-pad:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+#drum-machine #display {
+  background-color: chartreuse;
+  color: #445e11;
+  border-radius: 5px;
+  border: solid 1px gray;
+}
+
+/*# sourceMappingURL=App.css.map */
