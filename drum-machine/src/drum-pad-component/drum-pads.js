@@ -22,8 +22,8 @@ class Drum_pads extends Component {
 	playSound(str)
 	{
 		document.getElementById(str).volume=this.props.adjusted;
-		document.getElementById(str).play();
 		document.getElementById(str).currentTime=0;
+		document.getElementById(str).play();
 	}
 	
 	triggeredPad(padN)
@@ -36,10 +36,10 @@ class Drum_pads extends Component {
 
 	keyPressed(e) {
 		e.preventDefault();
-		if (e.key === 'q' || e.key === 'e' || e.key === 'w' || e.key === 'a' || e.key === 's' || e.key === 'd' || e.key === 'z' || e.key === 'x' || e.key === 'c') 
+		if (e.keyCode === 81 || e.keyCode === 87 || e.keyCode === 69 || e.keyCode === 65 || e.keyCode === 83 || e.keyCode === 68 || e.keyCode === 90 || e.keyCode === 88 || e.keyCode === 67) 
 		{
 			for (let track of this.props.audioLib) {
-				if (e.key === track.padkey.toString().toLowerCase()) {
+				if (e.keyCode === track.codekey) {
 					this.playSound(track.padkey);
 					this.triggeredPad(track.name);
 					this.props.submitNewDisplay(track.name);
